@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo arrow0-3
+rsvg-convert arrow0.svg > ../data/arrow0.png
+convert ../data/arrow0.png -rotate 90 ../data/arrow1.png
+convert ../data/arrow0.png -rotate 180 ../data/arrow2.png
+convert ../data/arrow0.png -rotate 270 ../data/arrow3.png
+
+for f in arrow4 arrow5 power0 power1 board
+do
+    echo $f
+    rsvg-convert $f.svg > ../data/$f.png
+done
+
